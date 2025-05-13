@@ -24,11 +24,11 @@ Repositório para o desenvolvimento de um website com interface CRUD para compos
 
 | Cor               | Hexadecimal                                                |
 | ----------------- | ---------------------------------------------------------------- |
-| Cor exemplo       | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
-| Cor exemplo       | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| Cor exemplo       | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
-| Cor exemplo       | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
-
+| Cor Primária       | ![#FF3D03](https://dummyimage.com/100x20/ff3d03/fff.jpg&text=+)#FF3D03 |
+| Cor Secundária       | ![#E8E7E7](https://dummyimage.com/100x20/E8E7E7/fff.jpg&text=+) #E8E7E7 |
+| Botão  Adicionar       | ![#008000](https://dummyimage.com/100x20/008000/fff.jpg&text=+) #008000 |
+| Botão Alterar       | ![#FDBB1D](https://dummyimage.com/100x20/fdba1d/fff.jpg&text=+) #FDBB1D |
+| Botão Remover       | ![#D10000](https://dummyimage.com/100x20/d10000/fff.jpg&text=+) #D10000 |
 
 ## Autores
 

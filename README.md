@@ -43,8 +43,10 @@ Insira um gif ou um link de alguma demonstração
 
 ## Funcionalidades
 
-- Temas dark e light
-- Preview em tempo real
-- Modo tela cheia
-- Multiplataforma
+- CRUD - Creat, Read, Update & Delete
+- Navbars para navegação entre menus de contexto
+- Modals para melhor inserção de formulários
+- Responsividade
+- Vinculo com Banco MySQL
+- Arquitetura lógica em PHP via XAMPP
 

@@ -1,10 +1,15 @@
 
 # Aplicação CRUD - EstacionaFÁCIL
 
-## Programação WEB - Gilmar Alexandre
+## Programação WEB - S.I
 
-Repositório para o desenvolvimento de um website com interface CRUD para composição de nota na disciplina de Programação WEB com o tutor Gilmar
+Repositório para o desenvolvimento de um website com interface CRUD para composição de nota na disciplina de Programação WEB com o tutor Gilmar Alexandre.
 
+## Autores
+
+- Alexandre da Silva | **RGM:** 37844717
+- Matheus Alves Estrela | **RGM:** 41068068
+- Guilherme Miguel | **RGM:** ?
 
 ## Escopo
 
@@ -14,13 +19,18 @@ Repositório para o desenvolvimento de um website com interface CRUD para compos
 - **Visual:** HTML & CSS (Boostrap)
 - **Lógica:** PHP
 - **Tratamento de Dados:** MySQL (XAMMP)
+
 ## Regras do Negócio
+
+- Permitir a manipulação de Veículos e Vagas;
+- Incluir um menu de contexto com o histórico e o valor total da permanência por período.
+- O valor da hora deve ser implementado internamente, considerando o valor de: R$ 10,00 p/HR
 
 ###  Entidades:
  
-- **Veículo:** Ano, Modelo, Placa, Dono
-- **Vaga:** Posição
-- **Registro:** Entrada e Saida
+- **Veículo:** ID; Placa; Modelo; Ano; Proprietário.
+- **Vaga:** Posição (Referência A1); Disponível.
+- **Registro:** Data de Entrada; Data de Saída; Valor/Hr.
 
 ## Documentação de cores
 
@@ -32,16 +42,6 @@ Repositório para o desenvolvimento de um website com interface CRUD para compos
 | Botão Alterar       | ![#FDBB1D](https://dummyimage.com/100x20/fdba1d/fff.jpg&text=+) | #FDBB1D |
 | Botão Remover       | ![#D10000](https://dummyimage.com/100x20/d10000/fff.jpg&text=+) | #D10000 |
 
-## Autores
-
-- Alexandre da Silva | **RGM:** 37844717
-- Matheus Alves Estrela | **RGM:** 41068068
-- Guilherme Miguel | **RGM:** ?
-
-## Demonstração
-
-Insira um gif ou um link de alguma demonstração
-
 
 ## Funcionalidades
 
@@ -49,6 +49,6 @@ Insira um gif ou um link de alguma demonstração
 - Navbars para navegação entre menus de contexto
 - Modals para melhor inserção de formulários
 - Responsividade
-- Vinculo com Banco MySQL
-- Arquitetura lógica em PHP via XAMPP
+- Vinculo com Banco MySQL via XAMPP
+- Arquitetura lógica em PHP
 

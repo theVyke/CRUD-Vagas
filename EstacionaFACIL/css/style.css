@@ -1,93 +1,92 @@
+:root {
+  --cor-primaria: #ff3d03;
+  --cor-secundaria: #e8e7e7;
+  --cor-adicionar: #008000;
+  --cor-alterar: #fdbb1d;
+  --cor-remover: #d10000;
+}
 
-      :root {
-        --cor-primaria: #ff3d03;
-        --cor-secundaria: #e8e7e7;
-        --cor-adicionar: #008000;
-        --cor-alterar: #fdbb1d;
-        --cor-remover: #d10000;
-      }
+body {
+  background-color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-      body {
-        background-color: #ffffff;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
 
-      .navbar-brand {
-        font-weight: 700;
-        font-size: 1.8rem;
-      }
+.nav-tabs .nav-link.active {
+  font-weight: bold;
+  border-bottom: 3px solid var(--cor-primaria);
+}
 
-      .nav-tabs .nav-link.active {
-        font-weight: bold;
-        border-bottom: 3px solid var(--cor-primaria);
-      }
+.nav-tabs .nav-link {
+  color: #4b6075;
+  border: none;
+  border-bottom: 3px solid transparent;
+}
 
-      .nav-tabs .nav-link {
-        color: #495057;
-        border: none;
-        border-bottom: 3px solid transparent;
-      }
+.card-header {
+  background-color: var(--cor-primaria);
+  color: white;
+}
 
-      .card-header {
-        background-color: var(--cor-primaria);
-        color: white;
-      }
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--cor-secundaria);
+}
 
-      .table-striped > tbody > tr:nth-of-type(odd) > * {
-        background-color: var(--cor-secundaria);
-      }
+.btn-adicionar {
+  background-color: var(--cor-adicionar);
+  color: white;
+  transition: all 0.3s ease;
+}
 
-      .btn-adicionar {
-        background-color: var(--cor-adicionar);
-        color: white;
-        transition: all 0.3s ease;
-      }
+.btn-adicionar:hover {
+  background-color: #0cd30c;
+  color: white;
+  border-color: #008000;
+}
 
-      .btn-adicionar:hover {
-        background-color: #0cd30c;
-        color: white;
-        border-color: #008000;
-      }
+.btn-alterar {
+  background-color: var(--cor-alterar);
+  color: black;
+  transition: all 0.3s ease;
+}
 
-      .btn-alterar {
-        background-color: var(--cor-alterar);
-        color: black;
-        transition: all 0.3s ease;
-      }
+.btn-alterar:hover {
+  background-color: #ffe600 !important;
+  color: black !important;
+}
 
-      .btn-alterar:hover {
-        background-color: #ffe600 !important;
-        color: black !important;
-      }
+.btn-remover {
+  background-color: var(--cor-remover);
+  color: white;
+  transition: all 0.3s ease;
+}
 
-      .btn-remover {
-        background-color: var(--cor-remover);
-        color: white;
-        transition: all 0.3s ease;
-      }
+.btn-remover:hover {
+  background-color: #8a0202;
+  color: white;
+}
 
-      .btn-remover:hover {
-        background-color: #8a0202;
-        color: white;
-      }
+.vaga-disponivel {
+  border-left: 5px solid var(--cor-adicionar);
+}
 
-      .vaga-disponivel {
-        border-left: 5px solid var(--cor-adicionar);
-      }
+.vaga-ocupada {
+  border-left: 5px solid var(--cor-remover);
+}
 
-      .vaga-ocupada {
-        border-left: 5px solid var(--cor-remover);
-      }
+footer {
+  background-color: cor;
+  color: var(--cor-primaria);
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
 
-      footer {
-        background-color: cor;
-        color: var(--cor-primaria);
-        padding: 1.5rem 0;
-        margin-top: auto;
-      }
-
-      .form-select:focus,
-      .form-control:focus {
-        border-color: var(--cor-primaria);
-        box-shadow: 0 0 0 0.25rem rgba(255, 61, 3, 0.25);
-      }
+.form-select:focus,
+.form-control:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 0.25rem rgba(255, 61, 3, 0.25);
+}

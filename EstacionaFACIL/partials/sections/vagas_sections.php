@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!-- Seção Vagas -->
       <div class="tab-pane fade" id="vagas" role="tabpanel">
         <div class="card mb-4 border-0 shadow-sm">

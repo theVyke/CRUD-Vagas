@@ -2,6 +2,23 @@
 include './database/conexao.php'; // conexao com BD
 ?>
 
+<!-- FALTA IMPLEMENTAR 
+
+- excluir_veiculo.php = Processamento para excluir veiculo (Vincular com BD para deletar a linha correspondente e 
+implementar função em JS para chamar o modal de confirmação)
+
+- excluir_vaga.php = Processamento para excluir vaga (Vincular com BD para deletar a linha correspondente e
+implementar função em JS para chamar o modal de confirmação)
+
+- Atualização das tabelas de vagas conforme inserção no banco de dados
+
+- Vinculação com os botões de registrar entrada e saída de veículos para atualizar as tabelas de vagas
+
+- Verificar a funcionalidade do read para os registros (implementar data e hora que virão da tabela de vagas e 
+também incorporar o valor do estacionamento)
+
+ -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -66,8 +83,6 @@ include './database/conexao.php'; // conexao com BD
       include_once 'partials/modals/vaga_entrada_modal.php';
       // Modal Vaga - Registrar Saída
       include_once 'partials/modals/vaga_saida_modal.php';
-      // Modal Vaga - Atualizar Vaga
-      // include_once 'partials/modals/vaga_atualiza_modal.php';
       ?>
       
     <!-- Footer -->

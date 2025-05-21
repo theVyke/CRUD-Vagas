@@ -1,3 +1,10 @@
+<?php
+require_once 'database/conexao.php';
+
+$sql = "SELECT * FROM veiculos ORDER BY id ASC";
+$veiculos = $conn->query($sql);
+?>
+
 <!-- Seção Veículos -->
 
 <div class="tab-pane fade show active" id="veiculos" role="tabpanel">
@@ -21,7 +28,50 @@
                     <th class="text-end">Ações</th>
                   </tr>
                 </thead>
+                
                 <tbody>
+                  <?php while ($v = $veiculos->fetch_assoc()): ?>
+                    <tr>
+                      <td><?= htmlspecialchars($v['id']) ?></td>
+                      <td><span class="badge bg-dark"><?= htmlspecialchars($v['placa']) ?></span></td>
+                      <td><?= htmlspecialchars($v['modelo']) ?></td>
+                      <td><?= htmlspecialchars($v['ano']) ?></td>
+                      <td><?= htmlspecialchars($v['proprietario']) ?></td>
+                      <td class="text-end">
+                        <button
+                          class="btn btn-sm btn-alterar me-2"
+                          onclick="abrirModalEdicao(
+                            <?= $v['id'] ?>,
+                            '<?= addslashes($v['placa']) ?>',
+                            '<?= addslashes($v['modelo']) ?>',
+                            <?= $v['ano'] ?>,
+                            '<?= addslashes($v['proprietario']) ?>'
+                          )"
+                          data-bs-toggle="modal"
+                          data-bs-target="#atualizaModal"
+                        >
+                          <i class="bi bi-pencil"></i> Editar
+                        </button>
+                        <button
+                          class="btn btn-sm btn-remover"
+                          onclick="excluirVeiculo(<?= $v['id'] ?>)"
+                        >
+                          <i class="bi bi-trash"></i> Excluir
+                        </button>
+                      </td>
+                    </tr>
+                  <?php endwhile; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+                      <!-- <tbody>
                   <tr>
                     <td>1</td>
                     <td><span class="badge bg-dark">ABC-1234</span></td>
@@ -54,9 +104,4 @@
                       </button>
                     </td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+                </tbody> -->

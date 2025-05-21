@@ -10,8 +10,6 @@ implementar função em JS para chamar o modal de confirmação)
 - excluir_vaga.php = Processamento para excluir vaga (Vincular com BD para deletar a linha correspondente e
 implementar função em JS para chamar o modal de confirmação)
 
-- Atualização das tabelas de vagas conforme inserção no banco de dados
-
 - Vinculação com os botões de registrar entrada e saída de veículos para atualizar as tabelas de vagas
 
 - Verificar a funcionalidade do read para os registros (implementar data e hora que virão da tabela de vagas e 

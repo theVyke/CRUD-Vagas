@@ -1,5 +1,8 @@
 <?php
+require_once 'database/conexao.php';
 
+$vagas = $conn->query("SELECT vagas.*, veiculos.placa FROM vagas 
+LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
 ?>
 
 <!-- Seção Vagas -->
@@ -11,29 +14,46 @@
               <i class="bi bi-plus-circle"></i> Nova Vaga
             </button>
           </div>
+          <!-- Vaga disponível -->
           <div class="card-body">
             <div class="row g-3">
-
-              <!-- Vaga disponível -->
-              <div class="col-md-4">
-                <div class="card vaga-disponivel h-100">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start">
-                      <h5 class="card-title mb-3">Vaga 01</h5>
-                      <span class="badge rounded-pill bg-success">Disponível</span>
+              <?php while ($vaga = $vagas->fetch_assoc()): ?>
+                <div class="col-md-4"> 
+                  <div class="card <?= $vaga['disponivel'] ? 'vaga-disponivel' : 'vaga-ocupada' ?> h-100"> <!-- Ver Style depois -->
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-start">
+                        <h5 class="card-title mb-3">Vaga: <?=($vaga['posicao']) ?></h5>
+                        <span class="badge rounded-pill <?= $vaga['disponivel'] ? 'bg-success' : 'bg-danger' ?>"><?= $vaga['disponivel'] ? 'Disponível' : 'Ocupada' ?></span>
+                      </div>
+                      <?php if ($vaga['disponivel']): ?>
+                        <p class="text-muted small mb-4">Nenhum veículo estacionado</p>
+                        <button class="btn btn-adicionar w-100" data-bs-toggle="modal" data-bs-target="#registroModal" data-vaga-id="<?= $vaga['id'] ?>" data-posicao="<?= $vaga['posicao'] ?>">
+                          <i class="bi"></i>Registrar Entrada
+                        </button>
+                      <?php else: ?>
+                        <p class="text-muted small mb-1">
+                          Placa: <strong><?= ($vaga['placa']) ?></strong>
+                        </p>
+                        <p class="text-muted small mb-4">
+                          Entrada: <?= date('d/m/Y H:i', strtotime($vaga['entrada'])) ?>
+                        </p>
+                        <button class="btn btn-remover w-100" data-vaga-id="<?= $vaga['id'] ?>" data-veiculo-id="<?= $vaga['veiculo_id'] ?>" data-bs-toggle="modal" data-bs-target="#saidaModal">
+                          <i class="bi bi-box-arrow-right"></i> Registrar Saída
+                        </button>
+                      <?php endif; ?>
                     </div>
-                    <p class="text-muted small mb-4">
-                      Nenhum veículo estacionado
-                    </p>
-                    <button class="btn btn-adicionar w-100" data-bs-toggle="modal" data-bs-target="#registroModal">
-                      <i class="bi"></i> Registrar Entrada
-                    </button>
                   </div>
                 </div>
-              </div>
+              <?php endwhile; ?>
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <!-- Vaga ocupada -->
-              <div class="col-md-4">
+
+
+                    <!-- Vaga ocupada -->
+              <!-- <div class="col-md-4">
                 <div class="card vaga-ocupada h-100">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start">
@@ -50,26 +70,4 @@
                     </button>
                   </div>
                 </div>
-              </div>
-
-              <!-- Vaga disponível -->
-              <div class="col-md-4">
-                <div class="card vaga-disponivel h-100">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start">
-                      <h5 class="card-title mb-3">Vaga 03</h5>
-                      <span class="badge rounded-pill bg-success">Disponível</span>
-                    </div>
-                    <p class="text-muted small mb-4">
-                      Nenhum veículo estacionado
-                    </p>
-                    <button class="btn btn-adicionar w-100" data-bs-toggle="modal" data-bs-target="#registroModal">
-                      <i class="bi"></i> Registrar Entrada
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </div> -->

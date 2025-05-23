@@ -4,6 +4,8 @@ include 'database/conexao.php'; // conexao com BD
 
 <!-- FALTA IMPLEMENTAR 
 
+- Atualização das tabelas de vagas conforme inserção no banco de dados
+
 - Vinculação com os botões de registrar entrada e saída de veículos para atualizar as tabelas de vagas
 
 - Verificar a funcionalidade do read para os registros (implementar data e hora que virão da tabela de vagas e 

@@ -31,7 +31,7 @@ $veiculos = $conn->query($sql);
                 
                 <tbody>
                   <?php while ($v = $veiculos->fetch_assoc()): ?>
-                    <tr>
+                    <tr> <!-- Remover specialchars -->
                       <td><?= htmlspecialchars($v['id']) ?></td>
                       <td><span class="badge bg-dark"><?= htmlspecialchars($v['placa']) ?></span></td>
                       <td><?= htmlspecialchars($v['modelo']) ?></td>
@@ -52,12 +52,12 @@ $veiculos = $conn->query($sql);
                         >
                           <i class="bi bi-pencil"></i> Editar
                         </button>
-                        <button
-                          class="btn btn-sm btn-remover"
-                          onclick="excluirVeiculo(<?= $v['id'] ?>)"
-                        >
-                          <i class="bi bi-trash"></i> Excluir
-                        </button>
+                        <form action="database/veiculos_exclusao.php" method="POST" style="display:inline;">
+                          <input type="hidden" name="idVeiculo" value="<?= $v['id'] ?>">
+                          <button class="btn btn-sm btn-remover" onclick="return confirm('Tem certeza que deseja excluir?')">
+                            <i class="bi bi-trash"></i> Excluir
+                          </button>
+                        </form>
                       </td>
                     </tr>
                   <?php endwhile; ?>

@@ -7,11 +7,10 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="formAtualiza">
-
+                <form action="database/veiculos_atualizacao.php" method="POST" id="formAtualiza">
                 <div class="mb-3">
-                    <label for="veiculoId" class="form-label">ID do Veículo</label>
-                    <input type="text" class="form-control bg-light" id="veiculoId" name="id" readonly
+                    <label for="idVeiculo" class="form-label">ID do Veículo</label>
+                    <input type="text" class="form-control bg-light" id="idVeiculo" name="idAtualizaVeiculo" readonly
                     style="cursor: not-allowed;">
                 </div>
                 <div class="mb-3">
@@ -26,7 +25,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                     <label for="ano" class="form-label">Ano</label>
-                    <input type="number" class="form-control" id="ano" name="ano" min="1900" max="2099" placeholder="2020"
+                    <input type="number" class="form-control" id="ano" name="anoVeiculo" min="1900" max="2099" placeholder="2020"
                         required>
                     </div>
                 </div>
@@ -35,12 +34,13 @@
                     <input type="text" class="form-control" id="dono" name="proprietario" placeholder="Nome completo"
                     required>
                 </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-alterar">Confirmar Alteração</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-alterar">Confirmar Alteração</button>
-            </div>
+
         </div>
     </div>
 </div>

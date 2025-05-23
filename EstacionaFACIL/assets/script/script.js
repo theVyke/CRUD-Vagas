@@ -1,6 +1,6 @@
 
   function abrirModalEdicao(id, placa, modelo, ano, proprietario) {
-    document.getElementById('veiculoId').value = id;
+    document.getElementById('idVeiculo').value = id;
     document.getElementById('placa').value = placa;
     document.getElementById('modelo').value = modelo;
     document.getElementById('anoVeiculo').value = ano;
@@ -9,5 +9,6 @@
     var modal = new bootstrap.Modal(document.getElementById('atualizaModal'));
     modal.show();
   }
+
 
   

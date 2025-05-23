@@ -4,9 +4,6 @@ include './database/conexao.php'; // conexao com BD
 
 <!-- FALTA IMPLEMENTAR 
 
-- excluir_veiculo.php = Processamento para excluir veiculo (Vincular com BD para deletar a linha correspondente e 
-implementar função em JS para chamar o modal de confirmação)
-
 - excluir_vaga.php = Processamento para excluir vaga (Vincular com BD para deletar a linha correspondente e
 implementar função em JS para chamar o modal de confirmação)
 

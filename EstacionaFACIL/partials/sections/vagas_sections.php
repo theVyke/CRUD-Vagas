@@ -38,7 +38,7 @@ LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
                       </div>
                       <?php if ($vaga['disponivel']): ?>
                         <p class="text-muted small mb-4">Nenhum veículo estacionado</p>
-                        <button class="btn btn-adicionar w-100" data-bs-toggle="modal" data-bs-target="#registroModal" data-vaga-id="<?= $vaga['id'] ?>" data-posicao="<?= $vaga['posicao'] ?>">
+                        <button class="btn btn-adicionar w-100" data-bs-toggle="modal" data-bs-target="#registroModal" onclick="definirVaga(<?= $vaga['id'] ?>)">
                           <i class="bi"></i>Registrar Entrada
                         </button>
                       <?php else: ?>

@@ -14,5 +14,9 @@
   return confirm(message);
 }
 
+  function definirVaga(id) {
+    document.getElementById('idVaga').value = id;
+  }
+
 
   

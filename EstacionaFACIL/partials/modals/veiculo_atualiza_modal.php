@@ -8,30 +8,26 @@
             </div>
             <div class="modal-body">
                 <form action="database/veiculos_db/veiculos_atualizacao.php" method="POST" id="formAtualiza">
-                <div class="mb-3">
-                    <label for="idVeiculo" class="form-label">ID do Veículo</label>
-                    <input type="text" class="form-control bg-light" id="idVeiculo" name="idAtualizaVeiculo" readonly
-                    style="cursor: not-allowed;">
-                </div>
+                    <input type="hidden" id="idVeiculo" name="idAtualizaVeiculo">
                 <div class="mb-3">
                     <label for="placa" class="form-label">Placa</label>
-                    <input type="text" class="form-control" id="placa" name="placa"
+                    <input type="text" class="form-control" id="novaPlaca" name="placa"
                     placeholder="Ex: ABC-1234 ou ABC-1D34 (MERCOSUL)" required>
                 </div>
                 <div class="row">
                     <div class="col-md-8 mb-3">
                     <label for="modelo" class="form-label">Modelo</label>
-                    <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Ex: Fiat Uno" required>
+                    <input type="text" class="form-control" id="novoModelo" name="modelo" placeholder="Ex: Fiat Uno" required>
                     </div>
                     <div class="col-md-4 mb-3">
                     <label for="ano" class="form-label">Ano</label>
-                    <input type="number" class="form-control" id="ano" name="anoVeiculo" min="1900" max="2099" placeholder="2020"
+                    <input type="number" class="form-control" id="novoAnoVeiculo" name="anoVeiculo" min="1900" max="2099" placeholder="2020"
                         required>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="dono" class="form-label">Proprietário</label>
-                    <input type="text" class="form-control" id="dono" name="proprietario" placeholder="Nome completo"
+                    <input type="text" class="form-control" id="novoDono" name="proprietario" placeholder="Nome completo"
                     required>
                 </div>
                     <div class="modal-footer">
@@ -44,4 +40,3 @@
         </div>
     </div>
 </div>
-

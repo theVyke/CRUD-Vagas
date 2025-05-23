@@ -12,7 +12,7 @@ $veiculos = $conn->query($sql);
           <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Cadastro de Veículos</h5>
             <button class="btn btn-adicionar" data-bs-toggle="modal" data-bs-target="#veiculoModal">
-              <i class="bi bi-plus-circle"></i> Novo Veículo
+              <i class="bi"></i> Novo Veículo
             </button>
           </div>
           <div class="card-body">
@@ -50,12 +50,12 @@ $veiculos = $conn->query($sql);
                           data-bs-toggle="modal"
                           data-bs-target="#atualizaModal"
                         >
-                          <i class="bi bi-pencil"></i> Editar
+                          <i class="bi"></i> Editar
                         </button>
-                        <form action="database/veiculos_exclusao.php" method="POST" style="display:inline;">
+                        <form action="database/veiculos_db/veiculos_exclusao.php" method="POST" style="display:inline;">
                           <input type="hidden" name="idVeiculo" value="<?= $v['id'] ?>">
-                          <button class="btn btn-sm btn-remover" onclick="return confirm('Tem certeza que deseja excluir?')">
-                            <i class="bi bi-trash"></i> Excluir
+                          <button class="btn btn-sm btn-remover" onclick="return confirmarExclusao()">
+                            <i class="bi"></i> Excluir
                           </button>
                         </form>
                       </td>

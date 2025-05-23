@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="database/veiculos_atualizacao.php" method="POST" id="formAtualiza">
+                <form action="database/veiculos_db/veiculos_atualizacao.php" method="POST" id="formAtualiza">
                 <div class="mb-3">
                     <label for="idVeiculo" class="form-label">ID do Veículo</label>
                     <input type="text" class="form-control bg-light" id="idVeiculo" name="idAtualizaVeiculo" readonly

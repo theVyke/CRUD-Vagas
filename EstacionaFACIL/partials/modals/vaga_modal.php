@@ -8,7 +8,7 @@
                     <h5 class="modal-title" id="vagaModalLabel">Cadastrar Nova Vaga</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="database/vagas_crud.php" method="POST">
+                <form action="database/vagas_db/vagas_crud.php" method="POST">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="posicao" class="form-label">Identificação da Vaga</label>

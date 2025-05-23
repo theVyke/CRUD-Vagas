@@ -10,5 +10,9 @@
     modal.show();
   }
 
+  function confirmarExclusao(message = 'Tem certeza que deseja excluir este item?') {
+  return confirm(message);
+}
+
 
   

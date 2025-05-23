@@ -1,11 +1,8 @@
 <?php
-include './database/conexao.php'; // conexao com BD
+include 'database/conexao.php'; // conexao com BD
 ?>
 
 <!-- FALTA IMPLEMENTAR 
-
-- excluir_vaga.php = Processamento para excluir vaga (Vincular com BD para deletar a linha correspondente e
-implementar função em JS para chamar o modal de confirmação)
 
 - Vinculação com os botões de registrar entrada e saída de veículos para atualizar as tabelas de vagas
 
@@ -84,7 +81,7 @@ também incorporar o valor do estacionamento)
     <?php include_once 'partials/components/footer.php'; ?>
 
     <!-- Bootstrap Icons -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Meu Script JS -->

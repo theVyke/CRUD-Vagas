@@ -1,5 +1,5 @@
     <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../conexao.php';
 
     //criar um novo veiculo
 
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['placa'])) {
 
         if ($result->num_rows > 0) {
             // Veículo já existe, redireciona com mensagem de erro
-            header("Location: ../index.php?ERRO_VEICULO_JA_EXISTE");
+            header("Location: ../../index.php?ERRO_VEICULO_JA_EXISTE");
             exit();
         }
 
@@ -26,10 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['placa'])) {
 
         if ($stmt->execute()) {
             // Sucesso - redireciona com mensagem de sucesso
-            header("Location: ../index.php?VEICULO_CADASTRADO_COM_SUCESSO");
+            header("Location: ../../index.php?VEICULO_CADASTRADO_COM_SUCESSO");
         } else {
             // Erro - redireciona com mensagem de erro
-            header("Location: ../index.php?ERRO_AO_CADASTRAR_VEICULO");
+            header("Location: ../../index.php?ERRO_AO_CADASTRAR_VEICULO");
         }
 
     $stmt->close();

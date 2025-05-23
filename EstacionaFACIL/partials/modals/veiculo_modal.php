@@ -12,7 +12,7 @@
           </div>
           <div class="modal-body">
 
-            <form action="database/veiculos_crud.php" method="POST">
+            <form action="database/veiculos_db/veiculos_crud.php" method="POST">
               <div class="mb-3">
                 <label for="placa" class="form-label">Placa</label>
                 <input type="text" class="form-control" id="placa" name="placa" placeholder="Ex: ABC-1234 ou ABC-1D34 (MERCOSUL)"

@@ -1,5 +1,5 @@
     <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../conexao.php';
 
     //criar uma nova vaga
 
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['posicao'])) {
 
         if ($result->num_rows > 0) {
             // Vaga já existe, redireciona com mensagem de erro
-            header("Location: ../index.php?ERRO_VAGA_JA_EXISTE");
+            header("Location: ../../index.php?ERRO_VAGA_JA_EXISTE");
             exit();
         }
 
@@ -23,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['posicao'])) {
 
         if ($stmt->execute()) {
             // redireciona para a aba de vagas com mensagem de sucesso
-            header("Location: ../index.php?VAGA_CADASTRADA_COM_SUCESSO");
+            header("Location: ../../index.php?VAGA_CADASTRADA_COM_SUCESSO");
         } else {
             // redireciona com mensagem de erro
-            header("Location: ../index.php?ERRO_AO_CADASTRAR_VAGA");
+            header("Location: ../../index.php?ERRO_AO_CADASTRAR_VAGA");
         }
 
     $stmt->close();

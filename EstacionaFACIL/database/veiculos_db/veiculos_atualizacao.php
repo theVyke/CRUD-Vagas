@@ -1,5 +1,5 @@
     <?php
-    require_once 'conexao.php';
+    require_once __DIR__ . '/../conexao.php';
     
 if (isset($_POST['idAtualizaVeiculo'])) {
     
@@ -14,15 +14,15 @@ if (isset($_POST['idAtualizaVeiculo'])) {
     
     if ($stmt->execute()) {
         // redireciona com mensagem de sucesso
-        header("Location: ../index.php?VEICULO_ATUALIZADO_COM_SUCESSO");
+        header("Location: ../../index.php?VEICULO_ATUALIZADO_COM_SUCESSO");
     } else {
         //redireciona com mensagem de erro
-        header("Location: ../index.php?ERRO_AO_ATUALIZAR_VEICULO");
+        header("Location: ../../index.php?ERRO_AO_ATUALIZAR_VEICULO");
     }
     
     $stmt->close();
     exit();
 }
 
-header("Location: ../index.php");
+header("Location: ../../index.php");
 exit();

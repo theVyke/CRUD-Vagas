@@ -5,14 +5,13 @@ $vagas = $conn->query("SELECT vagas.*, veiculos.placa FROM vagas
 LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
 ?>
 
-<!-- Seção Vagas -->
       <div class="tab-pane fade" id="vagas" role="tabpanel">
         <div class="card mb-4 border-0 shadow-sm">
           <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Controle de Vagas</h5>
-            <button class="btn btn-adicionar" data-bs-toggle="modal" data-bs-target="#vagaModal">
-              <i class="bi bi-plus-circle"></i> Nova Vaga
-            </button>
+              <button class="btn btn-adicionar" data-bs-toggle="modal" data-bs-target="#vagaModal">
+                <i class="bi"></i> Nova Vaga
+              </button>
           </div>
           <!-- Vaga disponível -->
           <div class="card-body">
@@ -23,7 +22,19 @@ LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
                     <div class="card-body">
                       <div class="d-flex justify-content-between align-items-start">
                         <h5 class="card-title mb-3">Vaga: <?=($vaga['posicao']) ?></h5>
-                        <span class="badge rounded-pill <?= $vaga['disponivel'] ? 'bg-success' : 'bg-danger' ?>"><?= $vaga['disponivel'] ? 'Disponível' : 'Ocupada' ?></span>
+                        <div class="d-flex align-items-center gap-2">  
+                          <span class="badge rounded-pill <?= $vaga['disponivel'] ? 'bg-success' : 'bg-danger' ?>">
+                            <?= $vaga['disponivel'] ? 'Disponível' : 'Ocupada' ?>
+                          </span>
+                          <?php if ($vaga['disponivel']): ?>
+                            <form action="database/vagas_db/vagas_exclusao.php" method="POST" style="display:inline;">
+                              <input type="hidden" name="idVaga" value="<?= $vaga['id'] ?>">
+                              <button type="submit" class="btn btn-link p-0 text-danger" title="Excluir vaga" onclick="return confirmarExclusao()">
+                                <i class="bi bi-trash"></i> <!-- Botão de excluir -->
+                              </button>
+                            </form>
+                          <?php endif; ?>
+                        </div>     
                       </div>
                       <?php if ($vaga['disponivel']): ?>
                         <p class="text-muted small mb-4">Nenhum veículo estacionado</p>

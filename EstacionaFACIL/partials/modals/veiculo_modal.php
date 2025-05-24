@@ -4,8 +4,8 @@
     <div class="modal fade" id="veiculoModal" tabindex="-1" aria-labelledby="veiculoModalLabel">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="veiculoModalLabel">
+          <div class="modal-header" style="background-color: var(--cor-adicionar);">
+            <h5 class="modal-title text-white" id="veiculoModalLabel">
               Cadastrar Veículo
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

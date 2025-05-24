@@ -14,6 +14,7 @@
           </div>
         </div>
         <hr class="my-3 bg-white" />
+        <img src="image/favicon.png" alt="Logo_Empresa" style="height:120px;width:120px;" class="my-2">
         <p class="mb-0">
           &copy; 2025 EstacionaFácil. Todos os direitos reservados.
         </p>

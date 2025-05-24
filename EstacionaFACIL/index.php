@@ -2,13 +2,6 @@
 include 'database/conexao.php'; // conexao com BD
 ?>
 
-<!-- FALTA IMPLEMENTAR 
-
-- Verificar a funcionalidade do read para os registros (implementar data e hora que virão da tabela de vagas e 
-também incorporar o valor do estacionamento)
-
- -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
 

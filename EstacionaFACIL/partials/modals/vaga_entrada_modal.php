@@ -3,7 +3,7 @@ require_once 'database/conexao.php';
 
 $vagas = $conn->query("SELECT vagas.*, veiculos.placa FROM vagas LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
 
-$veiculos_modal = $conn->query("SELECT * FROM veiculos ORDER BY id ASC");
+$veiculos_modal = $conn->query("SELECT * FROM veiculos WHERE ativo = 1 ORDER BY id ASC");
 ?>
 
 <!-- Modal Vaga - Registrar Entrada -->

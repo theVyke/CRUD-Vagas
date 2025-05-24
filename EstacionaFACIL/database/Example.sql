@@ -9,19 +9,6 @@ CREATE TABLE vagas (
     saida DATETIME NULL,
     FOREIGN KEY (veiculo_id) REFERENCES veiculos(id)
 );
---Registrar Entrada:
-UPDATE vagas 
-SET disponivel = FALSE, 
-    veiculo_id = [ID_VEICULO], 
-    entrada = NOW(), 
-    saida = NULL 
-WHERE id = [ID_VAGA];
-
---Registrar Saída:
-UPDATE vagas 
-SET disponivel = TRUE, 
-    saida = NOW() 
-WHERE id = [ID_VAGA];
 
 --TESTE VAGAS SQL
 CREATE TABLE veiculos (
@@ -30,4 +17,15 @@ CREATE TABLE veiculos (
     modelo VARCHAR(50) NOT NULL,
     ano INT NOT NULL,
     proprietario VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE registros (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    vaga_id INT NOT NULL,
+    veiculo_id INT NOT NULL,
+    entrada DATETIME NOT NULL,
+    saida DATETIME DEFAULT NULL,
+    valor DECIMAL(10,2) DEFAULT NULL,
+    FOREIGN KEY (vaga_id) REFERENCES vagas(id),
+    FOREIGN KEY (veiculo_id) REFERENCES veiculos(id)
 );

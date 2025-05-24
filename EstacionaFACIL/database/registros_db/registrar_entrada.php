@@ -14,6 +14,12 @@ if (!empty($_POST['idEntradaVeiculo']) && !empty($_POST['idVagaEntrada']) &&
         $stmt->bind_param("isi", $veiculo_id, $hora_entrada, $vaga_id);
         $stmt->execute();
         $stmt->close();
+
+        // Insere no histórico
+        $stmt = $conn->prepare("INSERT INTO registros (vaga_id, veiculo_id, entrada) VALUES (?, ?, ?)");
+        $stmt->bind_param("iis", $vaga_id, $veiculo_id, $hora_entrada);
+        $stmt->execute();
+        $stmt->close();
     }
      
     header("Location: ../../index.php?REGISTRO_DE_ENTRADA_FEITO_COM_SUCESSO");

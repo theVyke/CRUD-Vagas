@@ -12,6 +12,12 @@ if (!empty($_POST['idVagaSaida']) && !empty($_POST['dataSaida']) && !empty($_POS
         $stmt->bind_param("si", $hora_saida, $vaga_id);
         $stmt->execute();
         $stmt->close();
+
+        // Atualiza registro no histórico
+        $stmt = $conn->prepare("UPDATE registros SET saida = ? WHERE vaga_id = ? AND saida IS NULL");
+        $stmt->bind_param("si", $hora_saida, $vaga_id);
+        $stmt->execute();
+        $stmt->close();
     }
      
     header("Location: ../../index.php?REGISTRO_DE_SAIDA_FEITO_COM_SUCESSO");

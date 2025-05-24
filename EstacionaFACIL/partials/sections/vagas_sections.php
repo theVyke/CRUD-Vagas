@@ -60,7 +60,3 @@ LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
           </div>
         </div>
       </div>
-
-                              <!-- <button class="btn btn-remover w-100" data-vaga-id="<?= $vaga['id'] ?>" data-veiculo-id="<?= $vaga['veiculo_id'] ?>" data-bs-toggle="modal" data-bs-target="#saidaModal">
-                          <i class="bi"></i> Registrar Saída
-                        </button> -->

@@ -1,7 +1,7 @@
 <?php
 require_once 'database/conexao.php';
 
-$sql = "SELECT * FROM veiculos ORDER BY id ASC";
+$sql = "SELECT * FROM veiculos WHERE ativo = 1 ORDER BY id ASC";
 $veiculos = $conn->query($sql);
 ?>
 

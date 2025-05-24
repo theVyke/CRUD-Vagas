@@ -19,6 +19,8 @@ CREATE TABLE veiculos (
     proprietario VARCHAR(50) NOT NULL
 );
 
+ALTER TABLE veiculos ADD COLUMN ativo BOOLEAN DEFAULT TRUE;
+
 CREATE TABLE registros (
     id INT AUTO_INCREMENT PRIMARY KEY,
     vaga_id INT NOT NULL,

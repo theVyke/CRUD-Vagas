@@ -11,15 +11,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['placa'])) {
     $proprietario = $_POST['proprietario'];
 
     // Verifica se o veículo já está cadastrado pela placa
-    $check_sql = "SELECT id FROM veiculos WHERE placa = '$placa'";
-    $result = $conn->query($check_sql);
+    $check_sql = "SELECT id, ativo FROM veiculos WHERE placa = ?";
+    $stmt = $conn->prepare($check_sql);
+    $stmt->bind_param("s", $placa);
+    $stmt->execute();
+    $stmt->store_result();
 
-        if ($result->num_rows > 0) {
-            // Veículo já existe, redireciona com mensagem de erro
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($id, $ativo);
+        $stmt->fetch();
+        $stmt->close();
+
+        if ($ativo == 0) {
+            // Veículo existe e está inativo, reativa
+            $update = $conn->prepare("UPDATE veiculos SET ativo = 1, modelo = ?, ano = ?, proprietario = ? WHERE id = ?");
+            $update->bind_param("sisi", $modelo, $anoVeiculo, $proprietario, $id);
+            if ($update->execute()) {
+                header("Location: ../../index.php?VEICULO_REATIVADO_COM_SUCESSO");
+            } else {
+                header("Location: ../../index.php?ERRO_AO_REATIVAR_VEICULO");
+            }
+            $update->close();
+            exit();
+        } else {
+            // Veículo já existe e está ativo
             header("Location: ../../index.php?ERRO_VEICULO_JA_EXISTE");
             exit();
         }
-
+    }
+    $stmt->close();
+    
     // Prepara a query para inserir novo veículo
     $stmt = $conn->prepare("INSERT INTO veiculos (placa, modelo, ano, proprietario) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssis", $placa, $modelo, $anoVeiculo, $proprietario);

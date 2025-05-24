@@ -3,7 +3,7 @@
     
 if (isset($_POST['idVeiculo'])) {
     
-    $id = $_POST['idVeiculo'];
+    $id = intval($_POST['idVeiculo']);
 
     $stmt = $conn->prepare("DELETE FROM veiculos WHERE id = ?");
     $stmt->bind_param("i", $id);

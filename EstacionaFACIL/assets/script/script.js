@@ -14,9 +14,12 @@
   return confirm(message);
 }
 
-  function definirVaga(id) {
-    document.getElementById('idVaga').value = id;
-  }
-
+function definirVaga(id) {
+  const entrada = document.getElementById('idVagaEntrada');
+  const saida = document.getElementById('idVagaSaida');
+  
+  if (entrada) entrada.value = id;
+  if (saida) saida.value = id;
+}
 
   

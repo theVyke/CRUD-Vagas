@@ -4,7 +4,7 @@
     
 if (isset($_POST['idVaga'])) {
     
-    $id = $_POST['idVaga'];
+    $id = intval($_POST['idVaga']);
 
     $stmt = $conn->prepare("DELETE FROM vagas WHERE id = ?");
     $stmt->bind_param("i", $id);

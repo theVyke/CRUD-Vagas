@@ -10,7 +10,7 @@ $veiculos_modal = $conn->query("SELECT * FROM veiculos ORDER BY id ASC");
 <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form action="/database/registros_db/registrar_entrada.php" method="POST">
+      <form action="database/registros_db/registrar_entrada.php" method="POST">
         <div class="modal-header" style="background-color: var(--cor-adicionar);">
           <h5 class="modal-title text-white" id="registroModalLabel">Registrar Entrada de Veículo</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -27,7 +27,7 @@ $veiculos_modal = $conn->query("SELECT * FROM veiculos ORDER BY id ASC");
               <?php endwhile; ?>
             </select>
           </div>
-              <input type="hidden" name="idVaga" id="idVaga">
+              <input type="hidden" name="idVagaEntrada" id="idVagaEntrada">
           <div class="mb-3">
             <label class="form-label">Data de Entrada</label>
             <input type="date" class="form-control" id="dataEntrada" name="dataEntrada" required>

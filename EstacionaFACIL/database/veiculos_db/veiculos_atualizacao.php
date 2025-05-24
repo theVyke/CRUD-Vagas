@@ -3,7 +3,7 @@
     
 if (isset($_POST['idAtualizaVeiculo'])) {
     
-    $id = $_POST['idAtualizaVeiculo'];
+    $id = intval($_POST['idAtualizaVeiculo']);
     $placa = $_POST['placa'];
     $modelo = $_POST['modelo'];
     $anoVeiculo = $_POST['anoVeiculo'];

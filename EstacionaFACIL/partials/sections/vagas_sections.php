@@ -48,8 +48,8 @@ LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
                         <p class="text-muted small mb-4">
                           Entrada: <?= date('d/m/Y H:i', strtotime($vaga['entrada'])) ?>
                         </p>
-                        <button class="btn btn-remover w-100" data-vaga-id="<?= $vaga['id'] ?>" data-veiculo-id="<?= $vaga['veiculo_id'] ?>" data-bs-toggle="modal" data-bs-target="#saidaModal">
-                          <i class="bi bi-box-arrow-right"></i> Registrar Saída
+                        <button class="btn btn-remover w-100" data-bs-toggle="modal" data-bs-target="#saidaModal" onclick="definirVaga(<?= $vaga['id'] ?>)" >
+                          <i class="bi"></i> Registrar Saída
                         </button>
                       <?php endif; ?>
                     </div>
@@ -61,24 +61,6 @@ LEFT JOIN veiculos ON vagas.veiculo_id = veiculos.id");
         </div>
       </div>
 
-
-
-                    <!-- Vaga ocupada -->
-              <!-- <div class="col-md-4">
-                <div class="card vaga-ocupada h-100">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start">
-                      <h5 class="card-title mb-3">Vaga 02</h5>
-                      <span class="badge rounded-pill bg-danger">Ocupada</span>
-                    </div>
-                    <div class="mb-3">
-                      <p class="mb-1"><strong>Veículo:</strong> ABC-1234</p>
-                      <p class="mb-1"><strong>Modelo:</strong> Fiat Uno</p>
-                      <p class="mb-1"><strong>Entrada:</strong> 10:30</p>
-                    </div>
-                    <button class="btn btn-remover w-100" data-bs-toggle="modal" data-bs-target="#saidaModal">
-                      <i class="bi"></i> Registrar Saída
-                    </button>
-                  </div>
-                </div>
-              </div> -->
+                              <!-- <button class="btn btn-remover w-100" data-vaga-id="<?= $vaga['id'] ?>" data-veiculo-id="<?= $vaga['veiculo_id'] ?>" data-bs-toggle="modal" data-bs-target="#saidaModal">
+                          <i class="bi"></i> Registrar Saída
+                        </button> -->

@@ -4,8 +4,8 @@
     <div class="modal fade" id="vagaModal" tabindex="-1" aria-labelledby="vagaModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="vagaModalLabel">Cadastrar Nova Vaga</h5>
+                <div class="modal-header" style="background-color: var(--cor-adicionar);">
+                    <h5 class="modal-title text-white" id="vagaModalLabel">Cadastrar Nova Vaga</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="database/vagas_db/vagas_crud.php" method="POST">
